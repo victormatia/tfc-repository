@@ -1,5 +1,5 @@
 import jwt = require('jsonwebtoken');
-import { IUser } from '../interfaces';
+import { IDecoded, IUser } from '../interfaces';
 
 export default class JWT {
   private _secret: string;
@@ -11,5 +11,10 @@ export default class JWT {
   public createToken = (userInfos: IUser): string => {
     const token = jwt.sign({ userInfos }, this._secret, { expiresIn: '1d', algorithm: 'HS256' });
     return token;
+  };
+
+  public verifyToken = (token: string): IDecoded => {
+    const decoded = jwt.verify(token, this._secret);
+    return decoded as IDecoded;
   };
 }
