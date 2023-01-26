@@ -8,3 +8,9 @@ export interface ILogin {
   email: string,
   password: string,
 }
+
+export interface IDecoded {
+  userInfos: IUser,
+  iat?: number,
+  exp?: number,
+}
