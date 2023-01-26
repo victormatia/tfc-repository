@@ -1,3 +1,4 @@
+import { compareSync } from 'bcryptjs';
 import { ILogin, IUser } from '../interfaces';
 import User from '../database/models/User';
 import JWT from '../auth/JWT';
@@ -9,6 +10,14 @@ export default class LoginService {
     const user = await this.getUser(userInfos.email);
 
     if (!user) {
+      return { error: {
+        message: 'Incorrect email or password',
+      } };
+    }
+
+    const verifyPass = compareSync(userInfos.password, user.password);
+
+    if (user && !verifyPass) {
       return { error: {
         message: 'Incorrect email or password',
       } };
