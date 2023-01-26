@@ -4,4 +4,5 @@ COPY ./package* ./
 RUN npm i
 COPY ./ ./
 EXPOSE 3001
-ENTRYPOINT [ "npm", "run", "build" ]
+ENTRYPOINT [ "npm", "run" ]
+CMD [ "start" ]
