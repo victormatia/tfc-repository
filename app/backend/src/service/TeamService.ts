@@ -11,4 +11,10 @@ export default class TeamService {
 
     return teams as ITeam[];
   }
+
+  public async getById(id: number): Promise<ITeam> {
+    const team = await this._team.findByPk(id) as unknown;
+
+    return team as ITeam;
+  }
 }
