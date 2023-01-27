@@ -14,3 +14,8 @@ export interface IDecoded {
   iat?: number,
   exp?: number,
 }
+
+export interface ITeam {
+  id: number,
+  teamName: string,
+}
