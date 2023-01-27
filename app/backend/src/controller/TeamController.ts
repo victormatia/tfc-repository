@@ -9,4 +9,13 @@ export default class TeamController {
 
     res.status(200).json(teams);
   };
+
+  public static getById: RequestHandler = async (req, res) => {
+    const { id } = req.params;
+
+    const teamService = new TeamService();
+    const team = await teamService.getById(+id);
+
+    res.status(200).json(team);
+  };
 }
