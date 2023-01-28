@@ -6,8 +6,16 @@ export default class MatchController {
     this._service = _service;
   }
 
-  public getAll: RequestHandler = async (_req, res) => {
-    const allMatches = await this._service.getAllMatches();
+  public getAll: RequestHandler = async (req, res) => {
+    const { inProgress } = req.query;
+
+    let allMatches = [];
+
+    if (inProgress) {
+      allMatches = await this._service.getAllMatchesByProgress(inProgress === 'true');
+    } else {
+      allMatches = await this._service.getAllMatches();
+    }
 
     res.status(200).json(allMatches);
   };
