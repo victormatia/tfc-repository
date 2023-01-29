@@ -15,9 +15,11 @@ export default class LoginMiddleware {
 
     if (authorization) {
       const jwt = new JWT();
-      const { userInfos } = jwt.verifyToken(authorization);
+      const { decoded, error } = jwt.verifyToken(authorization);
 
-      req.body.user = userInfos;
+      if (error) return res.status(error.code).json({ message: error.message });
+
+      req.body.user = decoded?.userInfos;
 
       return next();
     }
