@@ -1,5 +1,5 @@
 import jwt = require('jsonwebtoken');
-import { IDecoded, IUser } from '../interfaces';
+import { IDecoded, IError, IUser } from '../interfaces';
 
 export default class JWT {
   private _secret: string;
@@ -13,8 +13,15 @@ export default class JWT {
     return token;
   };
 
-  public verifyToken = (token: string): IDecoded => {
-    const decoded = jwt.verify(token, this._secret);
-    return decoded as IDecoded;
+  public verifyToken = (token: string): { decoded?: IDecoded, error?: IError } => {
+    try {
+      const decoded = jwt.verify(token, this._secret) as IDecoded;
+      return { decoded };
+    } catch (e) {
+      return { error: {
+        code: 401,
+        message: 'Token must be a valid token',
+      } };
+    }
   };
 }
