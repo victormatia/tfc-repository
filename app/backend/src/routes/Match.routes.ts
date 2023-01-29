@@ -8,5 +8,6 @@ route.get('/', new MatchController().getAll);
 route.get('/?inProgress', new MatchController().getAll);
 route.post('/', LoginMiddleware.validateToken, new MatchController().postMatch);
 route.patch('/:id/finish', LoginMiddleware.validateToken, new MatchController().finishMatch);
+route.patch('/:id', new MatchController().updateGoals);
 
 export default route;
