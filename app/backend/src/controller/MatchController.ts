@@ -19,4 +19,20 @@ export default class MatchController {
 
     res.status(200).json(allMatches);
   };
+
+  public postMatch: RequestHandler = async (req, res) => {
+    const { body } = req;
+
+    const { result, error } = await this._service.postMatch(body);
+
+    if (error) return res.status(error.code).json({ message: error.message });
+
+    res.status(201).json(result);
+  };
+
+  public finishMatch: RequestHandler = async (req, res) => {
+    const { id } = req.params;
+    const { message } = await this._service.finishMatch(+id);
+    return res.status(200).json({ message });
+  };
 }
