@@ -66,6 +66,18 @@ export default class MatchService {
     return { message: 'the match already was finished' };
   }
 
+  public async updateGoals(
+    id: number,
+    goals: {
+      homeTeamGoals: number,
+      awayTeamGoals: number,
+    },
+  ) {
+    const updatedMatch = await this._match.update(goals, { where: { id } });
+
+    return { result: updatedMatch };
+  }
+
   private async validateTeams(teamsId: number[]) {
     const teams = await Promise.all(teamsId.map(async (id) => {
       const team = await this._team.findByPk(id);
