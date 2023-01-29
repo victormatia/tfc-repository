@@ -8,6 +8,7 @@ Match.init({
   id: {
     allowNull: false,
     primaryKey: true,
+    autoIncrement: true,
     type: INTEGER,
   },
   homeTeamId: {
