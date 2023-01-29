@@ -19,3 +19,23 @@ export interface ITeam {
   id: number,
   teamName: string,
 }
+
+export interface IMatch {
+  id?: number,
+  homeTeamId: number,
+  homeTeam?: {
+    teamName: string,
+  }
+  homeTeamGoals: number,
+  awayTeamId: number,
+  awayTeam?: {
+    teamName: string,
+  }
+  awayTeamGoals: number,
+  inProgress: boolean;
+}
+
+export interface IError {
+  code: number,
+  message: string,
+}
