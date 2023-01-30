@@ -15,8 +15,9 @@ const calculateTotalPoints = (teamName: string, matches: IMatch[]) => {
     switch (teamName) {
       case homeTeam?.teamName: {
         const result = returnStatusTeam(homeTeamGoals, awayTeamGoals);
-        if (result) totalPoints += 3;
-        if (!result) totalPoints += 1;
+        console.log(teamName, result);
+        if (result === 1) totalPoints += 3;
+        else if (result === 0) totalPoints += 1;
         break;
       }
       default: break;
@@ -48,8 +49,8 @@ const calulateVictories = (teamName: string, matches: IMatch[]) => {
     switch (teamName) {
       case homeTeam?.teamName: {
         const result = returnStatusTeam(homeTeamGoals, awayTeamGoals);
-        if (result) victories += 1;
-        else if (!result) draws += 1;
+        if (result === 1) victories += 1;
+        else if (result === 0) draws += 1;
         else losses += 1;
         break;
       }
