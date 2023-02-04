@@ -17,4 +17,10 @@ export default class LeaderBoardController {
 
     res.status(200).json(hankedTeams);
   };
+
+  public get: RequestHandler = async (_req, res) => {
+    const hankedTeams = await this._service.hankTeams();
+
+    res.status(200).json(hankedTeams);
+  };
 }
