@@ -5,7 +5,7 @@ import chaiHttp = require('chai-http');
 import { Response } from 'superagent';
 import { app } from '../app';
 import User from '../database/models/User';
-import userModelFindOne from './mocks/mockModels';
+import { userModelFindOne } from './mocks/mockModels';
 
 
 chai.use(chaiHttp)
