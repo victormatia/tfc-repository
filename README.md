@@ -1,13 +1,13 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# TFC - Trybe Football Club
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+This is a full-stack project that uses React.js, Node.js, Express.js and MySQL technologies and runs on Docker. Its purpose is to manage a football championship, allowing you to view the ongoing and finished matches, add or edit the result of a match, in addition to seeing the ranking of the teams.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Installation
+
+1. Clone the repository and navigate to the root with the following command:
+```
+$ git clone git@github.com:victormatia/tfc-repository.git && cd tfc-repository
+```
+2. To run the project we need to run the front-end, back-end and database containers. To do this, run the following command:
+```
+$ npm run compose:up
