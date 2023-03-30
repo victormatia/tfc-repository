@@ -9,10 +9,10 @@ The project is divided into 3 parts the client - Front-end -, the server - Back-
 The frontend was built with React and JavaScript and was styled with pure CSS. It is also important to mention that the state management of the application was done with Hooks and LocalStorage for the persistence of some user data. The following libraries were also used: Axios.js and React Testing Library, for agility in the consumption of the API and the creation of integration tests, consecutively. 
 
 ### Back-end
-...
+The backend was built in Node.js with TypeScript using an MSC architecture - Model, Service and Controller - and OOP - Object Oriented Programming. The API was developed based on the REST Architecture and, for reasons of agility, the Express framework was used to manage the contract between the back and the front, and, for the connection with the database, the ORM - Object was used. Relational Mapper - Sequelize.
 
 ### Database
-...
+The database used was MySQL, due to its robust structure and the possibility of sharing data between different tables using relationships.
 
 ## Installation and startup
 
