@@ -12,7 +12,7 @@ The frontend was built with React and JavaScript and was styled with pure CSS. I
 The backend was built in Node.js with TypeScript using an MSC architecture - Model, Service and Controller - and OOP - Object Oriented Programming. The API was developed based on the REST Architecture and, for reasons of agility, the Express framework was used to manage the contract between the back and the front, and, for the connection with the database, the ORM - Object was used. Relational Mapper - Sequelize.
 
 ### Database
-...
+The database used was MySQL, due to its robust structure and the possibility of sharing data between different tables using relationships.
 
 ## Installation and startup
 
